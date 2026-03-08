@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шпион: Наука и Места</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🕵️ Игра "Шпион"</h1>
+        
+        <!-- Меню настроек -->
+        <div id="setup">
+            <div class="input-group">
+                <label>Игроков:</label>
+                <input type="number" id="playerCount" value="3" min="3" max="20">
+            </div>
+            
+            <div class="input-group">
+                <label>Категория:</label>
+                <select id="category">
+                    <option value="science">🧪 Наука</option>
+                    <option value="entertainment">🎮 Развлечения</option>
+                    <option value="places">🏛 Достопримечательности</option>
+                </select>
+            </div>
+            
+            <button onclick="startGame()">Начать игру</button>
+        </div>
+
+        <!-- Игровой экран -->
+        <div id="game" class="hidden">
+            <div id="card" class="card" onclick="revealCard()">
+                <div class="card-inner">
+                    <div class="card-front">Нажми, чтобы узнать роль</div>
+                    <div class="card-back" id="roleText">Твоя роль...</div>
+                </div>
+            </div>
+            <p id="playerTurn">Игрок 1, твоя очередь</p>
+            <button id="nextBtn" class="hidden" onclick="nextPlayer()">Следующий игрок</button>
+        </div>
+
+        <!-- Экран таймера -->
+        <div id="timerScreen" class="hidden">
+            <h2>Кто шпион? 🤔</h2>
+            <div id="timer">05:00</div>
+            <button onclick="resetGame()">Новая игра</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
